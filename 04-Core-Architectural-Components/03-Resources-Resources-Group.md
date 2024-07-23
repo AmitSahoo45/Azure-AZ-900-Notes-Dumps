@@ -1,10 +1,83 @@
 # Azure Resources and Resource Groups
 
-## Hierarchy of Resources in Azure
-1. **Resources**: Basic units, actual Azure services (e.g., VMs, storage accounts, databases)
-2. **Resource Groups**: Containers for organizing resources
-3. **Subscriptions**: Associated with resources for billing
-4. **Management Groups**: High-level organization of subscriptions
+### Azure Resource Manager (ARM)
+It is an underlying service where the Azure resource deployment and management is done. It provides a management layer, which lets you create, upgrade, and uninstall your Azure subscription tools.
+
+### Hierarchy of Resources in Azure
+
+#### 1. Resources
+- **Definition**: Resources are individual services or instances you create in Azure, such as virtual machines, storage accounts, databases, and web apps.
+- **Examples**:
+  - **Virtual Machine (VM)**: A compute resource for running applications.
+  - **Storage Account**: A service for storing files, blobs, queues, tables, and disks.
+  - **SQL Database**: A managed relational database service.
+
+#### 2. Resource Groups
+- **Definition**: Resource Groups are containers that hold related resources for an Azure solution. They enable the management and organization of resources as a group.
+- **Purpose**:
+  - **Logical Grouping**: Organize resources logically based on their lifecycle or project.
+  - **Management**: Apply management policies, access controls, and monitoring to all resources within a group.
+- **Examples**:
+  - **Web Application**: A resource group might include a web app, database, and storage account.
+  - **Development Environment**: Separate resource groups for development, testing, and production environments.
+
+#### 3. Subscriptions
+- **Definition**: Subscriptions are units of management, billing, and scale within Azure. Each subscription holds one or more resource groups.
+- **Purpose**:
+  - **Billing**: Track usage and costs for resources under a single billing account.
+  - **Access Control**: Define access and policies at the subscription level.
+- **Examples**:
+  - **Production Subscription**: Used for live applications and services.
+  - **Development Subscription**: Used for development and testing purposes.
+
+#### 4. Management Groups
+- **Definition**: Management Groups are containers for managing access, policies, and compliance across multiple Azure subscriptions. They help organize subscriptions hierarchically.
+- **Purpose**:
+  - **Policy and Compliance**: Apply policies and ensure compliance across multiple subscriptions.
+  - **Organizational Hierarchy**: Reflect organizational structure with nested management groups.
+- **Examples**:
+  - **Organization-Level Group**: Top-level group for the entire organization.
+  - **Departmental Groups**: Sub-groups for specific departments like IT, HR, or Finance.
+
+### Visual Hierarchy
+```
+Management Groups
+    ├── Subscription A
+    │     ├── Resource Group 1
+    │     │     ├── Resource 1
+    │     │     ├── Resource 2
+    │     ├── Resource Group 2
+    │           ├── Resource 3
+    │           ├── Resource 4
+    ├── Subscription B
+          ├── Resource Group 3
+          │     ├── Resource 5
+          │     ├── Resource 6
+          ├── Resource Group 4
+                ├── Resource 7
+                ├── Resource 8
+```
+
+### Detailed Notes
+1. **Resources**:
+   - **Unit of Work**: Basic building block in Azure, performing specific tasks.
+   - **Lifecycle**: Can be created, managed, and deleted independently.
+   - **Identity**: Each resource has a unique identifier.
+
+2. **Resource Groups**:
+   - **Scope**: Resources within a group share the same lifecycle.
+   - **Management**: Apply tags, permissions, and policies to the entire group.
+   - **Location**: While resources can reside in different regions, the resource group itself is created in a specific region for metadata purposes.
+
+3. **Subscriptions**:
+   - **Ownership**: Typically owned by a single organization or individual.
+   - **Limits**: Each subscription has limits on resources, like the number of VMs.
+   - **Separation**: Useful for separating environments (e.g., production vs. development).
+
+4. **Management Groups**:
+   - **Hierarchy**: Can nest up to six levels of management groups.
+   - **Inheritance**: Policies and access controls applied to a management group are inherited by all subscriptions and resource groups within it.
+   - **Scalability**: Allows large organizations to efficiently manage multiple subscriptions. 
 
 ## Azure Resources
 ### Definition

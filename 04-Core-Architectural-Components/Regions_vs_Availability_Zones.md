@@ -1,4 +1,3 @@
-
 ### Azure Regions
 - **Definition**: An Azure region is a geographical area containing one or more datacenters.
 - **Purpose**: Regions allow users to deploy resources close to their users to reduce latency and comply with local data residency laws.
