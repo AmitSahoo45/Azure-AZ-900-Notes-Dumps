@@ -99,6 +99,13 @@ For example, if there are two Azure regions in India, such as East India and Wes
 - **Availability Zones**: Physically separate locations within an Azure region, each with independent power, cooling, and networking. They provide high availability and fault tolerance.
 For instance, "East US" has multiple availability zones, each with separate power and networking to ensure high availability.
 
+##### Availability Set
+An Availability Set is a *logical grouping function* that can be used to separate VM resources from each other.
+***imp***
+
+##### Availability Zone
+Availability Zones (AZ) are locations within an Azure region that are physically separate. An availability zone is composed of one or more independently operating power, and network data centers. Each region has a minimum of three zones.
+
 ----
 
 - **Edge Zones**: Extending Azure regions to edge locations closer to users for low-latency scenarios.
